@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Birthday Surprise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         PASSWORD SCREEN
+    ========================================== -->
+
+    <section id="password-screen" class="screen active">
+
+        <div class="password-content">
+
+            <span class="eyebrow">A LITTLE SURPRISE</span>
+
+            <h1>For Someone<br>Special ♡</h1>
+
+            <p>
+                There's something waiting for you.
+                But first, you need the password.
+            </p>
+
+            <form id="password-form">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        autocomplete="off"
+    >
+
+    <button
+        type="submit"
+        class="primary-button"
+    >
+        Unlock ♡
+    </button>
+
+    <span id="password-error"></span>
+
+</form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MAIN WEBSITE
+    ========================================== -->
+
+    <main id="main-content">
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section id="welcome" class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="eyebrow">TODAY IS YOUR DAY</span>
+
+                <h1>
+                    Happy Birthday,<br>
+                    My Favorite Person ♡
+                </h1>
+
+                <p>
+                    Another year, another reason to be
+                    grateful that you exist.
+                </p>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    data-scroll="birthday-message"
+                >
+                    Open Your Surprise
+                </button>
+
+            </div>
+
+            <div class="scroll-hint">
+                <span>SCROLL</span>
+                <span>↓</span>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             BIRTHDAY LETTER
+        ====================================== -->
+
+        <section id="birthday-message" class="letter-section">
+
+            <div class="content-container">
+
+                <span class="eyebrow">A LETTER FOR YOU</span>
+
+                <h2>To Someone Very Special ♡</h2>
+
+                <div class="letter">
+
+                    <p>
+                        Happy birthday!
+                    </p>
+
+                    <p>
+                        Today is a special day because it is
+                        the day someone wonderful came into
+                        this world.
+                    </p>
+
+                    <p>
+                        I hope you know how much you are
+                        appreciated. Even the little things
+                        about you can make an ordinary day
+                        feel a little more special.
+                    </p>
+
+                    <p>
+                        I hope this new chapter of your life
+                        brings you more reasons to smile,
+                        more moments worth remembering, and
+                        more dreams that slowly become reality.
+                    </p>
+
+                    <p>
+                        You deserve happiness, good memories,
+                        and people who genuinely appreciate
+                        having you around.
+                    </p>
+
+                    <p>
+                        So today, I hope you take a moment
+                        to celebrate yourself and everything
+                        you've accomplished so far.
+                    </p>
+
+                    <p>
+                        Keep being yourself. There is something
+                        really special about the person you are.
+                    </p>
+
+                    <p class="signature">
+                        Happy birthday. ♡
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-scroll="appreciation"
+                >
+                    Continue ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPRECIATION
+        ====================================== -->
+
+        <section id="appreciation" class="dark-section">
+
+            <div class="content-container">
+
+                <span class="eyebrow">LITTLE THINGS</span>
+
+                <h2>Things I Appreciate About You</h2>
+
+                <div class="appreciation-grid">
+
+                    <article class="appreciation-card">
+
+                        <span class="card-number">01</span>
+
+                        <h3>Your Smile</h3>
+
+                        <p>
+                            Somehow, it makes ordinary moments
+                            feel a little brighter.
+                        </p>
+
+                    </article>
+
+
+                    <article class="appreciation-card">
+
+                        <span class="card-number">02</span>
+
+                        <h3>Your Kindness</h3>
+
+                        <p>
+                            The way you treat people says a lot
+                            about the person you are.
+                        </p>
+
+                    </article>
+
+
+                    <article class="appreciation-card">
+
+                        <span class="card-number">03</span>
+
+                        <h3>Your Personality</h3>
+
+                        <p>
+                            There are so many little things
+                            that make you uniquely you.
+                        </p>
+
+                    </article>
+
+
+                    <article class="appreciation-card">
+
+                        <span class="card-number">04</span>
+
+                        <h3>The Little Things</h3>
+
+                        <p>
+                            Sometimes the smallest moments end
+                            up becoming the ones we remember most.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-scroll="little-messages"
+                >
+                    There's more ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LITTLE MESSAGES
+        ====================================== -->
+
+        <section id="little-messages" class="messages-section">
+
+            <div class="content-container">
+
+                <span class="eyebrow">JUST A FEW WORDS</span>
+
+                <h2>Little Messages ♡</h2>
+
+                <div class="message-list">
+
+                    <article>
+                        <span>♡</span>
+                        <p>
+                            You are appreciated more than you know.
+                        </p>
+                    </article>
+
+                    <article>
+                        <span>♡</span>
+                        <p>
+                            I hope you always have reasons to smile.
+                        </p>
+                    </article>
+
+                    <article>
+                        <span>♡</span>
+                        <p>
+                            May this year bring you closer to
+                            the things you've been dreaming about.
+                        </p>
+                    </article>
+
+                    <article>
+                        <span>♡</span>
+                        <p>
+                            Keep being the wonderful person
+                            that you are.
+                        </p>
+                    </article>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-scroll="gallery"
+                >
+                    Look back ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GALLERY
+        ====================================== -->
+
+        <section id="gallery" class="gallery-section">
+
+            <div class="content-container wide">
+
+                <span class="eyebrow">MEMORIES</span>
+
+                <h2>Little Moments Worth Keeping</h2>
+
+                <p class="section-description">
+                    Some moments are simple, but somehow
+                    they become memories worth keeping.
+                </p>
+
+                <div class="photo-gallery">
+
+                    <div class="photo photo-large">
+                        <img
+                            src="photo_2026-10-17_20-31-45.jpg"
+                            alt="Memory 1"
+                        >
+                    </div>
+
+                    <div class="photo">
+                        <img
+                            src="photo_2026-10-17_20-31-37.jpg"
+                            alt="Memory 2"
+                        >
+                    </div>
+
+                    <div class="photo">
+                        <img
+                            src="photo_2026-10-17_20-31-37.jpg"
+                            alt="Memory 3"
+                        >
+                    </div>
+
+                    <div class="photo photo-large">
+                        <img
+                            src="photo_2026-10-17_20-31-45.jpg"
+                            alt="Memory 4"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-scroll="final-surprise"
+                >
+                    One last thing ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FINAL SURPRISE
+        ====================================== -->
+
+        <section id="final-surprise" class="final-section">
+
+            <div class="final-overlay"></div>
+
+            <div class="final-content">
+
+                <span class="eyebrow">
+                    BEFORE YOU GO...
+                </span>
+
+                <h2>
+                    I Hope This Year<br>
+                    Is Kind To You.
+                </h2>
+
+                <p>
+                    More smiles.<br>
+                    More memories.<br>
+                    More beautiful moments.
+                </p>
+
+                <button
+                    type="button"
+                    id="surprise-button"
+                    class="primary-button"
+                >
+                    One Last Surprise ♡
+                </button>
+
+                <div id="final-message">
+
+                    <div class="cake">🎂</div>
+
+                    <h3>Happy Birthday! ♡</h3>
+
+                    <p>
+                        Here's to another wonderful year
+                        of being you.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         MUSIC
+    ========================================== -->
+
+    <audio id="background-music" loop>
+
+        <source
+            src="Ikaw Ang Hiling.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

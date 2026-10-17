@@ -1,0 +1,928 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #121212;
+    color: #f4ede7;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+body.locked {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --black: #121212;
+    --dark: #181818;
+    --dark-brown: #211c1b;
+
+    --cream: #f4ede7;
+    --muted: #bdb4af;
+
+    --pink: #d7aeb7;
+    --brown: #9d7d76;
+
+    --border:
+        rgba(244, 237, 231, 0.18);
+
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+section {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        100px 7%;
+}
+
+.content-container {
+    width: min(850px, 100%);
+
+    margin: auto;
+}
+
+.content-container.wide {
+    width: min(1100px, 100%);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size:
+        clamp(3rem, 8vw, 6rem);
+
+    line-height: 1.05;
+}
+
+h2 {
+    font-size:
+        clamp(2.2rem, 5vw, 4rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 35px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--muted);
+}
+
+.eyebrow {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--pink);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+#password-screen {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(157, 125, 118, 0.14),
+            transparent 40%
+        ),
+        var(--black);
+
+    text-align: center;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+#password-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.password-content {
+    width: min(500px, 100%);
+}
+
+.password-content h1 {
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+.password-content > p {
+    margin: 0 auto 35px;
+}
+
+#password-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    width: min(380px, 100%);
+
+    margin: auto;
+}
+
+#password-form input {
+    width: 100%;
+
+    padding: 16px 22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: var(--cream);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+#password-form input:focus {
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 30px rgba(215, 174, 183, 0.1);
+}
+
+#password-form input::placeholder {
+    color: #777;
+}
+
+#password-error {
+    min-height: 22px;
+
+    color: var(--brown);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    font-family: inherit;
+
+    cursor: pointer;
+
+    border: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 190px;
+
+    padding: 15px 30px;
+
+    border: 1px solid rgba(215, 174, 183, 0.65);
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215, 174, 183, 0.22),
+            rgba(157, 125, 118, 0.12)
+        );
+
+    color: #f4ede7;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
+
+    letter-spacing: 0.03em;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #d7aeb7,
+            #b99097
+        );
+
+    color: #121212;
+
+    border-color: #d7aeb7;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(215, 174, 183, 0.2);
+}
+
+.primary-button:active {
+    transform:
+        translateY(0) scale(0.98);
+}
+
+.primary-button:hover {
+    background: var(--pink);
+
+    color: var(--black);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(215, 174, 183, 0.15);
+}
+
+.text-button {
+    margin-top: 60px;
+
+    background: none;
+
+    color: var(--pink);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.08em;
+}
+
+.text-button:hover {
+    transform:
+        translateY(4px);
+
+    color: var(--cream);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(10, 10, 10, 0.35),
+            rgba(10, 10, 10, 0.85)
+        ),
+        url("images/sunset.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.45)
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+}
+
+.hero h1 {
+    color: var(--cream);
+
+    font-style: italic;
+
+    text-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.6);
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: #e8ded8;
+
+    margin: 0 auto 35px;
+
+    font-size: 1.05rem;
+}
+
+.scroll-hint {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #aaa;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    animation:
+        float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, 0);
+    }
+
+    50% {
+        transform:
+            translate(-50%, 7px);
+    }
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-section {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(157, 125, 118, 0.12),
+            transparent 35%
+        ),
+        var(--black);
+}
+
+.letter-section h2 {
+    font-style: italic;
+}
+
+.letter {
+    padding:
+        35px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.letter p {
+    max-width: 760px;
+
+    margin-bottom: 24px;
+
+    font-size: 1.05rem;
+}
+
+.letter p:last-child {
+    margin-bottom: 0;
+}
+
+.signature {
+    color: var(--cream);
+
+    font-style: italic;
+
+    margin-top: 40px;
+}
+
+
+/* =========================================
+   APPRECIATION
+========================================= */
+
+.dark-section {
+    background: var(--dark);
+}
+
+.dark-section h2 {
+    max-width: 700px;
+
+    font-style: italic;
+}
+
+.appreciation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.appreciation-card {
+    min-height: 220px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.appreciation-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(215, 174, 183, 0.45);
+}
+
+.card-number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--brown);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+}
+
+.appreciation-card h3 {
+    color: var(--pink);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   LITTLE MESSAGES
+========================================= */
+
+.messages-section {
+    background: var(--black);
+}
+
+.messages-section h2 {
+    font-style: italic;
+}
+
+.message-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.message-list article {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(215, 174, 183, 0.07);
+
+    border:
+        1px solid rgba(215, 174, 183, 0.12);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.message-list article:nth-child(even) {
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+.message-list article:hover {
+    transform:
+        translateX(7px);
+}
+
+.message-list article > span {
+    color: var(--pink);
+
+    font-size: 1.2rem;
+}
+
+.message-list p {
+    color: var(--cream);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-section {
+    background: var(--dark);
+}
+
+.gallery-section h2 {
+    font-style: italic;
+
+    max-width: 700px;
+}
+
+.section-description {
+    max-width: 600px;
+
+    margin-bottom: 40px;
+}
+
+.photo-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.photo {
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border:
+        1px solid var(--border);
+
+    aspect-ratio: 4 / 3;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-section {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(10, 10, 10, 0.45),
+            rgba(10, 10, 10, 0.9)
+        ),
+        url("images/sunset.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.final-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215, 174, 183, 0.08),
+            transparent 45%
+        );
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.final-content h2 {
+    color: var(--cream);
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+}
+
+.final-content > p {
+    margin-bottom: 35px;
+}
+
+#final-message {
+    display: none;
+
+    margin-top: 50px;
+
+    animation:
+        finalReveal 1s ease both;
+}
+
+#final-message.show {
+    display: block;
+}
+
+#final-message .cake {
+    font-size: 4rem;
+
+    margin-bottom: 20px;
+
+    animation:
+        cakePop 0.7s ease both;
+}
+
+#final-message h3 {
+    color: var(--pink);
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+@keyframes finalReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+@keyframes cakePop {
+
+    0% {
+        transform:
+            scale(0.5);
+    }
+
+    70% {
+        transform:
+            scale(1.15);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    color: var(--pink);
+
+    opacity: 0;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding:
+            80px 20px;
+    }
+
+    h1 {
+        font-size:
+            clamp(2.7rem, 12vw, 4rem);
+    }
+
+    h2 {
+        font-size:
+            clamp(2rem, 9vw, 3rem);
+    }
+
+    .appreciation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-large {
+        aspect-ratio: 4 / 3;
+    }
+
+    .letter p {
+        font-size: 1rem;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+
+    .text-button {
+        margin-top: 45px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+    section {
+        padding:
+            70px 18px;
+    }
+
+    .eyebrow {
+        font-size: 0.65rem;
+    }
+
+    .appreciation-card {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+    .message-list article {
+        padding: 20px;
+    }
+
+}
